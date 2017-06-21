@@ -1,12 +1,10 @@
 import moment from 'moment';
 
 var date = {
-  getDate(){
-    var date = new Date().toDateString();
-    var newDate = moment(Date(date)).format('DD MMMM YYYY');
+  getDate(date){
+    var timestamp = moment.unix(date);
 
-    console.log(newDate);
-    return newDate;
+    return timestamp.format('Do MMMM YYYY');
   }
 };
 

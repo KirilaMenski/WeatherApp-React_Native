@@ -36,7 +36,8 @@ class Root extends Component {
 					temp: Math.round(response.main.temp - 273),
 					pressure: response.main.pressure,
 					humidity: response.main.humidity,
-					wind: response.wind.speed
+					wind: response.wind.speed,
+					date: response.dt,
 				})
 			});
 	}
@@ -48,11 +49,11 @@ class Root extends Component {
 		};
 
 		return(
-				<View style={styles.container}>
+				<Image source={require('./../resources/images/few_clouds.jpg')} style={styles.container}>
 					<Text style={[styles.description, styles.marginTop]}>
-						{date.getDate()}
+						{date.getDate(this.state.date)}
 					</Text>
-					<View style={[styles.container,styles.weatherView]}>
+					<View style={[styles.weatherView]}>
 						<Text style={styles.title}>
 							{this.state.cityName}
 						</Text>
@@ -73,18 +74,22 @@ class Root extends Component {
 							Wind: {this.state.wind} m/s
 						</Text>
 					</View>
-				</View>
+				</Image>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
 		container: {
-			flex: 1,
+
+			width: null,
+			height: null,
 			alignItems: 'center',
-			backgroundColor: '#cbe1f4',
+			justifyContent: 'center',
+			backgroundColor: 'transparent'
 		},
 		weatherView:{
+			alignItems: 'center',
 			justifyContent: 'center',
 		},
 		iconStyle:{

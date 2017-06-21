@@ -14,8 +14,8 @@ class ViewPager extends Component {
 
 		return(
 			<ViewPagerAndroid style={[styles.viewPager]} initialPage={0}>
-        <Root style={styles.container}></Root>
-        <WeekWeather style={styles.container}></WeekWeather>
+        <Root></Root>
+        <WeekWeather></WeekWeather>
 			</ViewPagerAndroid>
 		);
 	}
