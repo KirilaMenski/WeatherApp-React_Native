@@ -49,6 +49,7 @@ class Root extends Component {
 		};
 
 		return(
+			
 				<Image source={require('./../resources/images/few_clouds.jpg')} style={styles.container}>
 					<Text style={[styles.description, styles.marginTop]}>
 						{date.getDate(this.state.date)}
