@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 
 import api from './../utilities/api';
-import date from './../utilities/date'
+import date from './../utilities/date';
+import background from './../utilities/backgroundUtils';
 
 class Root extends Component {
 	constructor(props){
@@ -49,8 +50,8 @@ class Root extends Component {
 		};
 
 		return(
-			
-				<Image source={require('./../resources/images/few_clouds.jpg')} style={styles.container}>
+
+				<Image source={background.getIcon(this.state.icon)} style={styles.container}>
 					<Text style={[styles.description, styles.marginTop]}>
 						{date.getDate(this.state.date)}
 					</Text>
@@ -62,10 +63,10 @@ class Root extends Component {
 						<Text style={[styles.description, styles.font]}>
 							{this.state.description}
 						</Text>
-						<Text style={styles.description}>
+						<Text style={[styles.description, styles.font]}>
 							Temperature: {this.state.temp} C
 						</Text>
-						<Text style={styles.description}>
+						<Text style={[styles.description , styles.font]}>
 							Pressure: {this.state.pressure} mm Hg
 						</Text>
 						<Text style={[styles.description, styles.font]}>
@@ -82,12 +83,10 @@ class Root extends Component {
 
 const styles = StyleSheet.create({
 		container: {
-
+			flex:1,
 			width: null,
 			height: null,
 			alignItems: 'center',
-			justifyContent: 'center',
-			backgroundColor: 'transparent'
 		},
 		weatherView:{
 			alignItems: 'center',
@@ -105,6 +104,7 @@ const styles = StyleSheet.create({
 		},
 		font:{
 			fontFamily: 'serif',
+			color: '#ffffff',
 		},
 		marginTop:{
 			margin: 20,

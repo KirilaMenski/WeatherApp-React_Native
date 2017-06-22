@@ -38,11 +38,11 @@ class WeekWeather extends Component {
   render() {
 		return(
       <View style={styles.mainContainer}>
-        <Text style={[styles.title, styles.font]}>{this.state.cityName}</Text>
           <ListView
+            horizontal={true}
             dataSource={this.state.dailyWeather}
             renderRow={(rowData) =>
-              <View>
+              <View style={styles.border}>
                 <Text style={[styles.font, styles.date]}>{date.getDate(rowData.dt)}</Text>
                 <View style={styles.containerView}>
                   <View style={styles.temp}>
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   mainContainer:{
     alignSelf: 'stretch',
     justifyContent: 'center',
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
   },
   containerView:{
     alignItems: 'center',
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
   },
   temp:{
     flex:1,
-    borderRightWidth: 1,
   },
   description:{
     flex:1.5,
@@ -97,6 +96,10 @@ const styles = StyleSheet.create({
   font:{
     fontFamily: 'serif',
   },
+  border:{
+    flex: 1,
+    borderRightWidth: 2,
+  }
 });
 
 export default WeekWeather;
