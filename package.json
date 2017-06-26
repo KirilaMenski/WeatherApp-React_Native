@@ -10,7 +10,8 @@
 		"moment": "^2.18.1",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.45.1",
-		"react-native-calendar-strip": "^0.1.4"
+		"react-native-calendar-strip": "^0.1.4",
+		"react-native-viewpager": "^0.2.13"
 	},
 	"devDependencies": {
 		"babel-jest": "20.0.3",

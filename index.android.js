@@ -2,6 +2,6 @@ import {
   AppRegistry,
 } from 'react-native';
 
-import ViewPager from './app/components/ViewPager';
+import WeekWeather from './app/components/WeekWeather';
 
-AppRegistry.registerComponent('WeatherApp', () => ViewPager);
+AppRegistry.registerComponent('WeatherApp', () => WeekWeather);
