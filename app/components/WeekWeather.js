@@ -136,7 +136,7 @@ class WeekWeather extends Component {
 	}
 
   openWeather(index){
-    // alert('Index' + index)
+    
     var rowData = this.state.dataSource[index - 1];
     this.setState({weather:rowData.weather,
       icon:rowData.weather[0].icon,
